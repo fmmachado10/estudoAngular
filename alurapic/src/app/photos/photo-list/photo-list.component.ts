@@ -11,15 +11,17 @@ import { Photo } from '../photo/photo';
 })
 export class PhotoListComponent implements OnInit {
 
-  photos: Photo[] = []; 
-  
+  photos: Photo[] = [];
+
+  filter: string = "";
+
   constructor(
     private photoService: PhotoService,
     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    
+
       const userName = this.activatedRoute
         .snapshot
         .params
